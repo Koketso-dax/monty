@@ -54,3 +54,29 @@ void free_tokens(void)
 
 	free(global_tokens);
 }
+
+/**
+ * is_line_empty - will determine if a line is empty
+ * @line: line in question
+ * @delims: delimitors
+ */
+int is_line_empty(char *line, char *delims)
+{
+	int x, y;
+
+	for (x = 0; x line[x]; x++)
+	{
+		for (y = 0; delims[y]; y++)
+		{
+			if (line[x] == delims[y])
+			{
+				break;
+			}
+			if (delims[y] == '\0')
+			{
+				return (0);
+			}
+		}
+	}
+	return (1);
+}
